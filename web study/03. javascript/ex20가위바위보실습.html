@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 400px;
+            height: 400px;
+            border: 5px solid black;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .box-img{
+            width: 150px;
+            height: 150px;
+        }
+
+        #result-me, #result-computer{
+            font-size: 2em;
+        }
+
+        .container>button {
+            margin-top: 10px;
+        }
+
+        .win {
+            border: 3px solid green;
+        }
+
+        .lose {
+            border: 3px solid red;
+        }
+
+        .tie {
+            border: 3px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <h1>Me</h1>
+            <div id="box-me">...</div>
+            <h3 id="result-me">...</h3>
+        </div>
+        <div class="box">
+            <h1>Computer</h1>
+            <div id="box-computer">...</div>
+            <h3 id="result-computer">...</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <button id="btn-play" onclick="play()">Play</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        /*
+            1. 유저가 Play 버튼을 누른다.
+            2. 유저와 컴퓨터는 랜덤으로 가위, 바위, 보를 출력한다.
+            3. 유저와 컴퓨터의 값을 비교하여 출력한다.
+              3-1. 승패에 따라 win, lose 를 출력
+              3-2. 비긴 경우, tie 출력
+            4. 승패에 따라 테두리가 다르게 출력한다. ( HTML객체.style.border 활용 ) 
+              4-1. 이긴 경우, 초록색 테두리
+              4-2. 진 경우, 빨간색 테두리
+              4-3. 비긴 경우, 검정색 테두리 
+        */
+        function sleep(milliseconds) {
+            return new Promise(resolve => setTimeout(resolve, milliseconds));
+        }
+
+        
+        let play = () => {
+            while (true) {
+            let randNum = Math.floor(Math.random()*3);
+            let randNum_1 = Math.floor(Math.random()*3);
+            
+            let _list = ['paper.png', 'rock.png', 'scissors.png'];
+
+            console.log(randNum, randNum_1);
+
+            const boxMe = document.getElementById("box-me");
+            boxMe.innerHTML = `<img class='box-img' src = './imgs/${_list[randNum]}'>`;
+            const boxComputer = document.getElementById("box-computer");
+            boxComputer.innerHTML = `<img class='box-img' src = './imgs/${_list[randNum_1]}'>`;
+
+            const box = document.getElementsByClassName("box");
+            console.log(box);
+            
+
+            const resultMe = document.getElementById("result-me");
+            const resultComputer = document.getElementById("result-computer");
+            if (randNum === randNum_1) {
+                resultMe.innerHTML = "tie";
+                resultComputer.innerHTML = "tie";
+                box[0].setAttribute("class", `box tie`)
+                box[1].setAttribute("class", `box tie`)
+            } else if (randNum % 3 - randNum_1 % 3 === 1) {
+                resultMe.innerHTML = "lose";
+                resultComputer.innerHTML = "win";
+                box[0].setAttribute("class", `box lose`)
+                box[1].setAttribute("class", `box win`)
+            } else if (randNum % 3 - randNum_1 % 3 === 2) {
+                resultMe.innerHTML = "win";
+                resultComputer.innerHTML = "lose";
+                box[0].setAttribute("class", `box win`)
+                box[1].setAttribute("class", `box lose`)
+            } else if (randNum % 3 - randNum_1 % 3 === -1) {
+                resultMe.innerHTML = "win";
+                resultComputer.innerHTML = "lose";
+                box[0].setAttribute("class", `box win`)
+                box[1].setAttribute("class", `box lose`)
+            } else {
+                resultMe.innerHTML = "lose";
+                resultComputer.innerHTML = "win";
+                box[0].setAttribute("class", `box lose`)
+                box[1].setAttribute("class", `box win`)
+            }
+            }
+            sleep(100); // 0.1초(100ms) 간격으로 쉽니다.
+        }
+        
+    </script>
+</body>
+
+</html>

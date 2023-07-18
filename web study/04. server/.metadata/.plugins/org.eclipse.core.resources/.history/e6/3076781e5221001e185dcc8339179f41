@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	fieldset, legend, table {
+	margin: auto;
+	
+}
+</style>
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>Join Page</legend>
+			<table>
+				<tr>
+					<td>ID</td>
+					<td><input type="text" name="id"></td>
+				</tr>
+				<tr>
+					<td>PW</td>
+					<td><input type="text" name="pw"></td>
+				</tr>
+				<tr>
+					<td>NAME</td>
+					<td><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td>EMAIL</td>
+					<td><input type="text" name="email"></td>
+				</tr>
+				<tr>
+					<td>TEL</td>
+					<td><input type="text" name="tel"></td>
+				</tr>
+				<tr>
+					<td>GENDER</td>
+					<td>
+						MAN<input type="radio" name="gender" value="MAN">
+						WOMAN<input type="radio" name="gender" value="WOMAN">
+					</td>
+				</tr>
+				<tr>
+					<td>HOBBY</td>
+					<td>
+						SPORT<input type="checkbox" name="hobby" value="SPORT">
+						STUDY<input type="checkbox" name="hobby" value="STUDY">
+						EATING<input type="checkbox" name="hobby" value="EATING">
+					</td>
+				</tr>
+				<tr>
+					<td>BIRTHDAY</td>
+					<td><input type="date" name="birthday"></td>
+				</tr>
+				<tr>
+					<td>COLOR</td>
+					<td><input type="color" name="color"></td>
+				</tr>
+				<tr>
+					<td>COUNTRY</td>
+					<td>
+						<select name="select">
+							<option>KOREA</option>
+							<option>JAPAN</option>
+							<option>CHINA</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>TALK</td>
+					<td>
+						<textarea rows="5" cols="23"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit">
+						<input type="reset">
+					</td>
+				</tr>
+			
+			</table>
+		</fieldset>
+	</form>
+	
+	
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            객체(object):
+                여러 속성과 메소드를 하나의 변수로 묶음.
+                key, value 구조 {key:value, key:value, key:value, ...}
+                1) 사용자 정의 객체
+                2) 브라우저 객체 (BOM & DOM; 브라우저에서 제공)
+                    BOM : browser object model  : 브라우저의 기능을 제어할 수 있는 객체를 제공
+                    DOM : document object model : HTML문서를 제어할 수 있는 객체를 제공
+                3) 내장 객체 (Array, Date, Math, ...; javascript에서 제공)
+
+                ex) 사용자 정의 객체
+                    let person = {
+                        "name"        : "임명진",
+                        "age"         : 25,
+                        "gender"      : "남자",
+                        "favoritFood" : ["김치찌개", "제육볶음", "계란찜"],
+                        "intro"       : function () {
+                            console.log(`안녕하세요. 저는 ${this.name}입니다.`);
+                        }
+                    };
+                접근 방법 : 1. person.name
+                           2. person["name"]
+                           3. person.intro()
+                this     : "객체 내의 변수"를 의미.
+        */
+       
+        let person = {
+            "name"        : "임명진",
+            "age"         : 25,
+            "gender"      : "남자",
+            "favoritFood" : ["김치찌개", "제육볶음", "계란찜"],
+            "intro"       : function () {
+                console.log(`person.intro 함수 호출 됨: ${this.name}입니다.`);
+            }
+        };
+
+        console.log(person.name);
+
+        console.log(person.favoritFood);
+
+        person.intro()
+    </script>
+</body>
+</html>

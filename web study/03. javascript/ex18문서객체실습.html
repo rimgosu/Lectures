@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Square&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            text-align: center;
+            margin: 0px;
+            font-family: 'Nanum Square', sans-serif;
+        }
+        #like {
+            font-size: 50px;
+        }
+        #imgs {
+            margin-top: 30px;
+        }
+        
+        
+    </style>
+</head>
+<body id="all">
+    <img src="https://pub.cyphers.co.kr/images3/free/2022/08/24/1661273964687.gif" width = "100%" id="imgs">
+    <div >
+        <div id="div">
+            ❤️😍👌😁🤣👍💕<h1 id="like">0</h1>
+        </div>
+        <button onclick="plus()">좋아요</button>
+        <button onclick="minus()">싫어요</button>
+    </div>
+    <img src="https://cdn.dealbada.com/data/editor/1712/291f798e7b2ad1b05180b91292b66ae9_1513872263_2764.gif" width = "100%">
+    
+    <script>
+        /*
+            버튼을 눌렀을 때 숫자가 변경되는 함수를 구현해보세용.
+            좋아요 버튼 클릭 = 숫자가 1씩 증가
+            싫어요 버튼 클릭 = 숫자가 1씩 감소
+        */
+
+        let plus = () => {
+            const like = document.getElementById("like");
+            // like.innerText = parseInt(like.innerText) +1 ;
+            like.innerText++;
+        }
+        let minus = () => {
+            const like = document.getElementById("like");
+            like.innerText = parseInt(like.innerText) -1 ;
+        }
+
+        var element = document.getElementById("all");
+
+        // 색상 배열
+        var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+
+        // 배경 색 변경 콜백 함수
+        function changeBackgroundColor() {
+        // 무작위 색상 선택
+        var randomColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        // 배경 색 설정
+        element.style.background = randomColor;
+        }
+
+        // 1초마다 배경 색 변경
+        setInterval(changeBackgroundColor, 1000);    </script>
+</body>
+</html>

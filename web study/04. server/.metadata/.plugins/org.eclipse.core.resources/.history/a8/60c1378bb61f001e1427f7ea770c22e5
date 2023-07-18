@@ -1,0 +1,45 @@
+package com;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Ex01Mypage
+ */
+@WebServlet("/Ex01Mypage")
+public class Ex01Mypage extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		System.out.println("hello world");
+		
+		/*
+		 * response (응답 객체):
+		 *  Web Page Text 및 Tag를 사용하기 위해서는 out객체 필요
+		 * 
+		 * 응답 객체에 인코딩 적용:
+		 * 
+		 */
+		response.setCharacterEncoding("euc-kr");
+		
+		PrintWriter out = response.getWriter();
+		out.print("<html>");
+		out.print("<body>");
+		out.print("<h1> 반갑다 - gosu</h1>");
+		out.print("<img src = 'img.jpg'>");
+		out.print("</body>");
+		out.print("</html>");
+		
+	}
+
+}

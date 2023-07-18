@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>입력요소의 데이터 접근하기</h1>
+    <form action="">
+        <input type="text" id="user-input">
+        <input type="button" id="btn" value="출력">
+    </form>
+
+    <p id="msg"></p>
+
+    <script>
+        const userInput = document.getElementById("user-input");
+        const btn = document.getElementById("btn");
+        const msg = document.getElementById("msg");
+
+        let getValue = () => {
+            console.log(userInput.value);
+            msg.innerText = userInput.value;
+        }
+        
+        /*
+            버튼 객체에 이벤트 적용:
+                1) btn.onclick = function(){console.log("함수실행!");}
+                2) btn.addEventListener("click", function() {console.log("함수2번째 실행!");});
+                    2_1) 함수 따로 정의 후 적용: 
+                         let getValue = () => {console.log("함수3번째실행");}
+                         btn.addEventListener("click", getValue)
+            
+            객체 속성에 직접 접근:
+                객체.속성    
+                ex) <input type="text" id="user-input">
+                    const userInput = document.getElementById("user-input");
+                    console.log(userInput.value);
+
+            이벤트 & 이벤트 핸들러:
+                1) 이벤트       : 웹 페이지에서 마우스, 키보드입력, 스크롤 등의 행위
+                2) 이벤트핸들러 : 이벤트가 감지되었을 때, 동작하는 함수
+        */
+        btn.onclick = function(){
+            console.log("함수실행!");
+        }
+        btn.addEventListener("click", function() {
+            console.log("함수2번째로 실행!");
+        });
+
+        // btn.addEventListener("click", getValue)
+        userInput.addEventListener("keyup", getValue)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1px solid black">
+	<tr>
+		<%
+			String[] st = new String[10];
+			for (int i=1 ; i<=10; i++) {
+				String str = "<td >";
+				str += i;
+				str += "</td>";
+				st[i-1] = str;
+			}
+		%>
+		<%= st[0] %><%= st[1] %><%= st[2] %>
+	</tr>
+</table>
+</body>
+</html>

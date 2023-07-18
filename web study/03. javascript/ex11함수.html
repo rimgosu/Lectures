@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        /*
+            함수 선언 (표현식):
+                1. function intro() {}      : 함수 호이스팅 가능. (함수 호출 => 함수 생성 불가)
+                2. let intro2 = function {} : 익명함수 형태 (주소값 전달)
+                                              함수 호이스팅 불가능. (함수 호출 => 함수 생성 불가)
+                3. let intro3 = () => {}    : 화살표 함수
+                                              함수 호이스팅 불가능.
+        */
+
+        let msg2 = "hello!"; // 전역변수, 함수에서 msg2 사용가능
+        intro(); // 함수 호출을 함수 생성보다 먼저 실행가능 (함수 호이스팅)
+        function intro() {
+            console.log("intro()함수 호출되었습니다.");
+            let msg = "function!"; // 지역변수
+            console.log(msg);
+            console.log(msg2);
+        }
+        // console.log(msg); // error!
+        
+
+        
+        // intro2(); // error!
+        let intro2 = function() {
+            console.log("함수표현식 실행");
+        }
+
+        // intro3(); // error!
+        let intro3 = () => {
+            console.log("화살표함수 실행!");
+        }
+        intro2(); intro3(); 
+    
+    </script>
+</body>
+</html>

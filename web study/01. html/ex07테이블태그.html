@@ -1,0 +1,46 @@
+<!-- 
+    7) 테이블태그
+    7_1) <tr> : table row,  table 태그 안에서 행을 의미
+    7_2) <td> : table data, table 태그 안에서 열을 의미
+    7_3) <table><tr><td> 순서
+    7_4) <table border="1px solid black"><table>
+    7_5) <td colspan="2"> : 열병합
+    7_5) <td rowspan="2"> : 행병합
+    
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px solid black">
+        <tr>
+            <td>번호</td>
+            <td>음식</td>
+            <td>가격</td>
+            <td>개수</td>
+        </tr>
+        <tr>
+            <td>1번</td>
+            <td>육회</td>
+            <td>33,000원</td>
+            <td rowspan="2">10개</td>
+        </tr>
+        <tr>
+            <td>2번</td>
+            <td>치킨</td>
+            <td>30,000원</td>
+        </tr>
+        <tr>
+            <td>3번</td>
+            <td>족발</td>
+            <td colspan="2">38,000원</td>
+        </tr>
+    </table>
+    
+</body>
+</html>

@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\aischool\Desktop\web study\04. server\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+455066311.index
+782803907.index
+1392915332.index
+2492068814.index
+1099210691.index
+2700614471.index
+1075865229.index

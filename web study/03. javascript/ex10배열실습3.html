@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            10개의 랜덤숫자를 가진 배열을 생성한 후, 가장 큰 수를 출력해보기!
+            결과) 0,0,0,0,0,...에서 가장 큰 수는 0입니다.
+            조건) 중복된 숫자 없이 저장
+        */
+
+        const _set = new Set();
+        while(true) {
+            if (_set.size >= 10) {
+                break;
+            }
+            _set.add(Math.floor(Math.random()*100+1));
+        } 
+        console.log(_set);
+        
+        let arr = [..._set];
+        console.log(arr);
+
+        _max = 0;
+        for (let i=0; i< arr.length; i++) {
+            if (_max < arr[i]) {
+                _max = arr[i];
+            }
+        }
+        console.log(`${arr}에서 가장 큰 수는 ${_max}입니다.`);
+        
+    </script>
+</body>
+</html>

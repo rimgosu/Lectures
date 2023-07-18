@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+   <div id="result-area"></div>
+   <button id="req-btn">서버요청</button>
+   
+   <script src="./js/jquery-3.7.0.js"></script>
+   <script>
+      //버튼을 클릭했을 때 서버에 요청하는 이벤트 구현
+      $("#req-btn").on("click", function() {
+         
+         //서버에 비동기통신을 하기 위한 ajax() 구현
+         //type: 데이터를 전송하는 방식(Get/Post)
+         $.ajax({
+            //url:"ajax?data=1234&data2=Hello",
+            url:"ajax",
+            type:"get",
+            data:{data:1234, data2:"Hello"},
+            success:function(res) {
+               console.log("요청성공!");
+               console.log("응답받은 데이터 :",res);
+               
+               //응답받은 데이터가 JSON형식의 문자열데이터인 경우
+               //JSON.parse()를 이용해서 객체로 변환해줘야 한다!
+               let obj = JSON.parse(res);
+               console.log(obj, obj.data, obj.num);
+               
+            },
+            error:function() {
+               alert("요청실패..");
+            }
+         });//end ajax
+         
+      });//end event
+
+   
+   </script>
+</body>
+</html>

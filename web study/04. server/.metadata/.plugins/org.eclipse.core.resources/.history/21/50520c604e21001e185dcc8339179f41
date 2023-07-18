@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="Ex07RadioCheckBox" method="get">
+		결혼 유무 :
+		기혼자 <input value="기혼자" type="radio" name="marriage">
+		미혼자 <input value="미혼자" type="radio" name="marriage">
+		<br>
+		취미 : 
+		넷플릭스보기 <input value="넷플릭스보기" type="checkbox" name="hobby []">
+		게임 <input value="게임" type="checkbox" name="hobby []">
+		유튜브편집 <input value="유튜브" type="checkbox" name="hobby []">
+		방탈출 <input value="방탈출" type="checkbox" name="hobby []">
+		맛집탐방 <input value="맛집탐방" type="checkbox" name="hobby []">
+		
+		<br>
+		<input type="submit">
+	</form>
+</body>
+</html>

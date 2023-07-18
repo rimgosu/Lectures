@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		Do Get, Do Post: 
+			get (오토바이) vs post (트럭), 데이터 전송
+			Do Get     : <form action="" method ="get">
+			
+			<fieldset> : form태그에서 정보들을 그룹화하는 태그
+			<legend>   : 범례 (제목 지어주는 것)
+	 -->
+	 <fieldset>
+	 	<legend>Get 방식</legend>
+	 	<form action="Ex06GetPost" method ="get">
+	 		<input type="text" name="get">
+	 		<input type="submit">
+	 	</form>
+	 </fieldset>
+</body>
+</html>

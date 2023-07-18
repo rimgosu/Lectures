@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+   <div id="result-area"></div>
+   <button id="req-btn">데이터요청</button>
+   
+   <script src="./js/jquery-3.7.0.js"></script>
+   <script>
+      
+      //버튼을 클릭했을 때 동작하는 이벤트 구현
+      $("#req-btn").on("click", function() {
+      
+      // + ajax() 함수구현
+         $.ajax( {
+            url: "ajax",
+            success: function(){
+               
+            },
+            error:function(){
+               
+            }
+         });
+      });
+      
+   
+   
+   
+   
+   
+   </script>
+</body>
+</html>

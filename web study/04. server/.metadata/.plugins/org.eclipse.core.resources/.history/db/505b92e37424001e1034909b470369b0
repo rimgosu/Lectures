@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		String java = request.getParameter("java");
+		String web = request.getParameter("web");
+		String iot = request.getParameter("iot");
+		String android = request.getParameter("android");
+		
+		int sum = Integer.parseInt(java) + Integer.parseInt(web) + Integer.parseInt(iot) + Integer.parseInt(android);
+	%>
+</body>
+</html>

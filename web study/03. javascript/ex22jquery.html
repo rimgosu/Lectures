@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>하이용</h1>
+    <h2 id="tit">하이용h2</h2>
+    <script src="./js/jquery-3.7.0.js">
+        /*
+            <script src="./js/jquery-3.7.0.js">/script> jquery 불러오기
+        */
+    </script>
+    <script>
+        /*
+            jquery:
+                $(jQuery 객체) : 태그 선택자
+                    $("h1")          : document.getElementsByTagName("h1")
+                    $("#tit")        : document.getElementsById("tit")
+                    $("#tit").text() : document.getElementsById("tit").innerText
+                    $("#tit").html() : document.getElementsById("tit").innerHTML
+                    
+                    $("#tit").html("바꿀내용")          : html과 text에서 바꿀 내용 쓰기
+                    $("#tit").css({key:value,..})      : css 스타일 변경
+                        $("#tit").css({backgroundColor:"green"})
+                        * jQuery css 적용하는 key : "-" => "대문자" *
+                    $("#tit").on("click", function(){} : 이벤트 핸들러
+        */
+       console.log($("h1"));
+       console.log($("#tit"));
+       console.log($("#tit").text("하이용"));
+       $("#tit").css({
+        color:"green",
+        backgroundColor:"yellow"
+       });
+       $("#tit").on("click", function(){
+        alert("클릭이벤트 실행!");
+       });
+    </script>
+</body>
+</html>

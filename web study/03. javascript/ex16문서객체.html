@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="msg">날씨가 너무 흐리네요..</h1>
+    <p id="msg2">
+        오늘 점심은 돈까스..
+        <p>오늘은 점심을 뭘 먹지..</p>
+    </p>
+
+    <script>
+        /*
+            DOM :
+                const msg = document.getElementById("msg");
+                msg           : <h1 id="msg">날씨가 너무 흐리네요..</h1>
+                msg.innerText : "텍스트"       ; 날씨가 너무 흐리네요.. 
+                msg.innerHTML : "html"        ; 날씨가 너무 흐리네요.. 
+
+                msg.innerText : 값 변경        ; "비가 내릴 것 같네요.." 
+                msg.innerHTML : html 문서 변경 ;"<a href='#'>비가 내릴 것 같네요..</a>"  
+        */
+        const msg = document.getElementById("msg");
+        console.log("" + msg);
+        console.log(msg);
+        console.log(msg.innerText);
+        console.log(msg.innerHTML);
+        msg.innerText = "비가 내릴 것 같네요.."
+        msg.innerHTML = "<a href='#'>비가 내릴 것 같네요..</a>";
+
+        const msg2 = document.getElementById("msg2");
+        console.log(msg2.innerText);
+        console.log(msg2.innerHTML);
+        
+
+    </script>
+</body>
+</html>

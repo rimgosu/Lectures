@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>Join Page</legend>
+			<table>
+				<tr>
+					<td>ID</td>
+					<td><input type="text" name="id"></td>
+				</tr>
+				<tr>
+					<td>PW</td>
+					<td><input type="text" name="pw"></td>
+				</tr>
+				<tr>
+					<td>NAME</td>
+					<td><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<td>EMAIL</td>
+					<td><input type="text" name="email"></td>
+				</tr>
+				<tr>
+					<td>TEL</td>
+					<td><input type="text" name="tel"></td>
+				</tr>
+			
+			</table>
+		</fieldset>
+	</form>
+	
+	
+</body>
+</html>

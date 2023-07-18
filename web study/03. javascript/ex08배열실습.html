@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            let arr = []    : 배열 선언
+            arr.push()      : append
+            arr.pop()       : pop
+            arr.splice()    : 삭제 splice(index, 삭제할 갯수)
+            arr.indexOf()   : index
+            arr.includes()  : 데이터 있는지 확인 (if a in arr:)
+            arr.slice()     : 파이썬 슬라이싱
+            ...items        : 함수 내에서 여럿 매개변수로 받을 때, *args
+            */
+        let fruits = ["apple", "avocado", "banana", "blueberry", "cherry", "dragon fruit", 
+   "fig", "grape", "kiwi", "lime", "mango", "orange", "oriental melon", "pear",
+    "peach", "pineapple", "shine muscat", "strawberry", "tomato", 
+   "water melon", "yuja"];
+        console.log(fruits);
+        fruits.pop();
+        fruits.push("grapefruit");
+        fruits.push("cherry tomato");
+        fruits.push("pine nut");
+        fruits.push("korean blackberry");
+        console.log(fruits.includes("orange"));
+        console.log(fruits.includes("kiwi"));
+        fruits[fruits.indexOf("water melon")] = "melon";
+        
+        console.log(fruits);
+
+        fruits.splice(fruits.indexOf("lime"), 3);
+        
+        console.log(fruits);
+
+        fruits = fruits.slice(0,fruits.indexOf("shine muscat"));
+        console.log(fruits);
+        
+        let newfruits = fruits.slice(fruits.indexOf("pear"), fruits.indexOf("pineapple")+1);
+        console.log(newfruits);
+
+
+    </script>
+</body>
+</html>

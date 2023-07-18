@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            10개의 랜덤숫자를 저장하는 배열을 만든 후, 짝수의 개수를 출력해보기!
+            결과 형태) arr에 저장된 짝수는 0,0,0,0,0이고 총 0개입니다.
+        */
+       const mySet = new Set();
+       let newarr = [];
+       while (true) {
+        if (mySet.size >=10) {
+            break;
+        }
+        let randNum =Math.floor(Math.random() *100+1);
+        mySet.add(randNum);
+       }
+       let arr = [...mySet];
+       console.log(arr);
+       for (let i=0; i<arr.length; i++) {
+        if (arr[i] % 2 == 0 ) {
+            newarr.push(arr[i]);
+        }
+       }
+       console.log(`arr에 저장된 짝수는 ${newarr}이고 총 ${newarr.length}개입니다.`);
+  
+    </script>
+    
+</body>
+</html>

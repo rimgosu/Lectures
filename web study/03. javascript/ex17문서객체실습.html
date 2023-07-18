@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tit">클릭 한 번 해볼까요?</h1>
+    <p id="link-text"></p>
+    <p id="list"></p>
+    <button onclick="h1Change()">클릭</button>
+    <button onclick="createAtag()">링크생성</button>
+    <button onclick="createList()">목록생성</button>
+
+    
+
+    <script>
+        let h1Change = () => {
+            const tit = document.getElementById("tit");
+            tit.innerText = "변경왼료";
+
+            tit.style.color = "blue";
+            tit.style.border = "1px solid blue";
+            tit.style.backgroundColor = "skyblue";
+        } 
+        
+        let createAtag = () => {
+            const linkText = document.getElementById("link-text");
+            linkText.innerHTML = "<a href='https://www.naver.com'>네이버이동</a>";
+        } 
+        let createList = () => {
+            const list = document.getElementById("list");
+            // list.innerHTML = `
+            // <ul>
+            //     <li>html</li>
+            //     <li>css</li>
+            //     <li>javascript</li>
+            // </ul>
+            // `
+            
+            let arr = ["html", "css", "javascript", "java", "python"];
+            let resultHTML = "<ul>";
+            
+            for(let i=0; i<arr.length; i++) {
+                resultHTML += `<li>${arr[i]}</li>`;
+            }
+            resultHTML += "</ul>"
+
+            list.innerHTML = resultHTML
+
+        } 
+        
+    </script>
+</body>
+</html>

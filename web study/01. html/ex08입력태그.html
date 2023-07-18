@@ -1,0 +1,69 @@
+<!-- 
+    8) 입력 태그
+    8_1) <input type="text"> : 텍스트 입력
+                               모든 입력받는 태그는 form 태그 안에 들어가 있어야한다.
+    8_2) <form><input></form>
+    8_3) placeholder: "아이디를 입력해주세요"
+    8_4) value      : "기본값"
+    8_5) type=      : 데이터 양식 (
+                                    "text"
+                                  , "password"
+                                  , "email"    : 이메일 타입이 아니면 오류 발생
+                                  , "submit"
+                                  , "file"
+                                  , "color"
+                                  , "radio"    : name="같은이름"; 묶여 있어야함
+                                  , "checkbox" : 중복선택
+                                  , "number"   : 숫자만 입력받음
+                                  , "range"
+                                  , "date"     : 날짜 선택 가능
+                                  )
+    8_6) maxlength  : 최대 글자수 지정
+    8_7) readonly   : 읽기 전용
+    8_8) <select>   : <option>과 함께 사용
+    8_9) <textarea> : 넓은 텍스트 영역 ( rows="10"
+                                        cols="40")
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        id: <input readonly maxlength="10" value="1234" type="text" placeholder="아이디를 입력해주세요"> <br>
+        pw: <input type="password" placeholder="비밀번호를 입력해주세요"> <br>
+        email: <input type="email" placeholder="이메일 입력"> <br>
+        file: <input type="file"> <br>
+        color: <input type="color"> <br>
+        남자 <input type="radio" name="gender">
+        여자 <input type="radio" name="gender"> <br>
+        공부 <input type="checkbox">
+        운동 <input type="checkbox">
+        영화감상 <input type="checkbox">
+        기타 <input type="checkbox"> <br>
+        나이 : <input type="number"> <br>
+        범위 : <input type="range"> <br>
+        날짜 : <input type="date"> <br>
+
+        <select>
+            <option>대한민국</option>
+            <option>미국</option>
+            <option>중국</option>
+            <option>일본</option>
+            <option>프랑스</option>
+            <option>요르단</option>
+        </select><br>
+
+        하고싶은말<br>
+        <textarea rows="7px" cols="10px"></textarea>
+
+        <input type="submit" > <br>
+    </form>
+
+</body>
+</html>

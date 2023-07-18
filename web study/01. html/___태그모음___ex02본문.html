@@ -1,0 +1,110 @@
+<!-- 
+    2) 본문
+    2_1) <h>: 제목태그 (h1~h6)
+    2_2) <p>: 본문내용태그 (줄바꿈)
+    2_3) <span>:
+        - 본문내용태그 (옆으로)
+        - 특징이 없는 태그
+    2_4) <br>: 개행 (break)
+    2_5) <hr>: 수평선 - 끝 태그 생략 가능(홀태그)
+
+    3) 강조   
+    3_1) <b>: 굵게
+    3_2) <strong>: 굵게 (청각장애인 배려), 걍 쓸거면 보통 이걸로 씀
+                 웹페이지 맨 밑에 '개인정보처리방침' strong으로 처리되있음
+
+    4) 리스트
+    4_0) 1) 리스트 공간 선언 : <ul>, <ol>, <dl>
+         2) 리스트 내 실질적인 데이터 : <li>
+    4_1) <ul> : unordered list, 번호없는 목록
+    4_2) <ol> : ordered list, 번호있는 목록
+    4_2_1) type = "A", "a", "1"(기본값), "i", "I"
+    4_3) <dl> : definition list, 정의 목록
+    4_3_1) <dt> : title, 용어의 제목
+    4_3_2) <dd> : description, 용어의 설명
+    4_4) <li> : list item, 공통적으로 사용
+         ** li*숫자 : 리스트 갯수만큼 자동완성
+
+    5) 이미지
+    5_1) <img src="상대경로">: 원본 이미지
+    5_2) <img width="500px" height="300px" src="img1.png">: 이미지 크기 속성 추가
+    5_3) <img alt="경고문구" src="틀린상대경로">
+    5_4) 이전경로   : ../
+    5_5) 다운로드 X : 웹 이미지 - 이미지 주소 복사
+
+    6) a태그 : 링크
+    6_1) 웹에 있는 이미지 이용:
+         웹 이미지 - 이미지 주소 복사
+    6_2) <a href="링크">
+    6_3) <a target="_blank"> : 새 창으로 이동
+
+    7) 테이블태그
+    7_1) <tr> : table row,  table 태그 안에서 행을 의미
+    7_2) <td> : table data, table 태그 안에서 열을 의미
+    7_3) <table><tr><td> 순서
+    7_4) <table border="1px solid black"><table>
+    7_5) <td colspan="2"> : 열병합
+    7_5) <td rowspan="2"> : 행병합
+    
+    8) 입력 태그
+    8_1) <input type="text"> : 텍스트 입력
+                               모든 입력받는 태그는 form 태그 안에 들어가 있어야한다.
+    8_2) <form><input></form>
+    8_3) placeholder: "아이디를 입력해주세요"
+    8_4) value      : "기본값"
+    8_5) type=      : 데이터 양식 (
+                                    "text"
+                                  , "password"
+                                  , "email"    : 이메일 타입이 아니면 오류 발생
+                                  , "submit"
+                                  , "file"
+                                  , "color"
+                                  , "radio"    : name="같은이름"; 묶여 있어야함
+                                  , "checkbox" : 중복선택
+                                  , "number"   : 숫자만 입력받음
+                                  , "range"
+                                  , "date"     : 날짜 선택 가능
+                                  )
+    8_6) "maxlength": 최대 글자수 지정
+    8_7) "readonly" : 읽기 전용
+    8_8) <select>   : <option>과 함께 사용    
+    -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>h1태그</h1>
+    <h2>h2태그</h2>
+    <h3>h3태그</h3>
+    <h4>h4태그</h4>
+    <h5>h5태그</h5>
+    <h6>h6태그</h6>
+
+
+    <p style="color: blue;">p태그</p>
+    <p>p태그</p>
+
+
+    <span>span태그</span>
+    <br>
+    <span>span태그</span>
+    <br>
+    style="color: blue;" 일반 text 
+    <br>
+    일반 text = 스타일 지정 못함
+    
+    
+    <hr color = "red" width="150px" size="140px">
+    <hr color = "orange" width="150px" size="120px">
+    <hr color = "yellow" width="150px" size="100px">
+    <hr color = "green" width="150px" size="80px">
+    <hr color = "blue" width="150px" size="60px">
+    <hr color = "Indigo" width="150px" size="40px">
+    <hr color = "purple" width="150px" size="20px">
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+       let scores = [76,53,80,90,88];
+        /*
+            scores배열에 있는 모든 점수를 더해주는 함수
+        */
+       let sumFunc = (scoreData) => {
+        let _sum = 0;
+        for(let i=0; i<scoreData.length; i++) {
+            _sum += scoreData[i];
+        }
+
+        console.log(_sum);
+        return _sum;
+       }
+       let avg = sumFunc(scores)/scores.length;
+       console.log(avg);
+    </script>
+</body>
+</html>

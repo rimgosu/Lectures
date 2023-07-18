@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Ajax/src/main/webapp/NewFile.html&apos; to &apos;ex01Ajax.html&apos;" description="Rename resource &apos;NewFile.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/NewFile.html" name="ex01Ajax.html" stamp="1689563434625" updateReferences="true"/>
+</session>

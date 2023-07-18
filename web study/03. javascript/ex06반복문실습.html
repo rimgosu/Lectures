@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+        body {
+            background: linear-gradient(45deg, #f00, #f90, #ff0, #0f0, #00f, #90f, #f0f);
+            background-size: 600% 600%;
+            animation: shining 10s linear infinite;
+        }
+        
+        #hehe {
+            background-color: #0f0;
+            background-size: 600% 600%;
+            animation: shining1 2s linear infinite;
+        }
+        #hehe1 {
+            width: 100%;
+            height: 100%;
+            font-size: 200px;
+            
+            position: fixed;
+            top: 0px;
+            left: 75%;
+            
+            background: linear-gradient(45deg, #f00, #f90, #ff0, #0f0, #00f, #90f, #f0f);
+            background-size: 600% 600%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shining 2s linear infinite;
+
+            background-color: red;
+        }
+        @keyframes shining1 {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        @keyframes shining {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        <script>
+            const st = `
+    
+    
+            -   
+                                                                                                  ,;;-  
+                                                                                                 ;;;;;. 
+                                                                                               ~;;;;;;;.
+                                                                                             ,:;;;;;;;- 
+                                                                                            ~;;;;;;;;-  
+                                                                                          ,;;;;;;;;;-   
+                                                                                         -;;;;;;;;;,    
+                                                                                       .:;;;;;;;;;.     
+                                                                                      -;;;;;;;;;;.      
+                                                                                    .~;;;;;;;;;;.       
+                                                                                   .:;;;;;;;;;;.        
+                                                                                  ,;;;;;;;;;;;.         
+                                                                                 ~;;;;;;;;;;;.          
+                                                                               .:;;;;;;;;;;;.           
+                                                                              .:;;;;;;;;;;;.            
+                                                                             ,;;;;;;;;;;;;.             
+                                                                            -;;;;;;;;;;;;.              
+                                                                           :;;;;;;;;;;;;.               
+                                                                          :;;;;;;;;;;;;.                
+                                                                        .:;;;;;;;;;;;;,                 
+                                                                       .;;;;;;;;;;;;;-                  
+                                                                      .;;;;;;;;;;;;;-                   
+                                                                     ,;;;;;;;;;;;;;-                    
+                                                                    ,;;;;;;;;;;;;;~                     
+                                                                   -;;;;;;;;;;;;;:                      
+                                                                  -;;;;;;;;;;;;;:                       
+                                                                 -;;;;;;;;;;;;;;                        
+                                                                -;;;;;;;;;;;;;;.                        
+                                                               ~;;;;;;;;;;;;;;,                         
+                                                              ~;;;;;;;;;;;;;;-                          
+                                                             -;;;;;;;;;;;;;;~                           
+                                                            -;;;;;;;;;;;;;;:                            
+                                                           -;;;;;;;;;;;;;;;                             
+                                                          -;;;;;;;;;;;;;;;.                             
+                                                         -;;;;;;;;;;;;;;;,                              
+                                                        ,;;;;;;;;;;;;;;;~                               
+                                                       ,;;;;;;;;;;;;;;;:                                
+                                                      ,;;;;;;;;;;;;;;;;                                 
+                                                     ,;;;;;;;;;;;;;;;;,                                 
+                                                    .:;;;;;;;;;;;;;;;-                                  
+                                                    ;;;;;;;;;;;;;;;;:                                   
+                                                   ;;;;;;;;;;;;;;;;;.                                   
+                                                  :;;;;;;;;;;;;;;;;.                                    
+                                                 ~;;;;;;;;;;;;;;;;~                                     
+                                                -;;;;;;;;;;;;;;;;:                                      
+                                               -;;;;;;;;;;;;;;;;;.                                      
+                                              .;;;;;;;;;;;;;;;;;-                                       
+                                             .;;;;;;;;;;;;;;;;;~                                        
+                                             ;;;;;;;;;;;;;;;;;;.                                        
+                                            ~;;;;;;;;;;;;;;;;;,                                         
+                                           ~;;;;;;;;;;;;;;;;;~                                          
+                                          ,;;;;;;;;;;;;;;;;;;                                           
+       ,                                  ;;;;;;;;;;;;;;;;;;,                                           
+      ;;;-                              .;;;;;;;;;;;;;;;;;;~                                            
+     -;;;;:.                            :;;;;;;;;;;;;;;;;;;                                             
+    ,;;;;;;;:,                         -;;;;;;;;;;;;;;;;;;,                                             
+     :;;;;;;;;~.                      ,;;;;;;;;;;;;;;;;;;~                                              
+      :;;;;;;;;;,                     ;;;;;;;;;;;;;;;;;;;                                               
+       ;;;;;;;;;;;,                  :;;;;;;;;;;;;;;;;;;,                                               
+        ;;;;;;;;;;;:.               :;;;;;;;;;;;;;;;;;;:                                                
+        ,;;;;;;;;;;;;~             ,;;;;;;;;;;;;;;;;;;;.                                                
+         ,;;;;;;;;;;;;;-.         .;;;;;;;;;;;;;;;;;;;-                                                 
+          -;;;;;;;;;;;;;;,        :;;;;;;;;;;;;;;;;;;;                                                  
+           :;;;;;;;;;;;;;;;      ~;;;;;;;;;;;;;;;;;;;,                                                  
+            :;;;;;;;;;;;;;;;:.  ,;;;;;;;;;;;;;;;;;;;~                                                   
+             :;;;;;;;;;;;;;;;;~ ;;;;;;;;;;;;;;;;;;;;.                                                   
+             .:;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-                                                    
+              .;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:                                                     
+               .;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,                                                     
+                -;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:                                                      
+                 ~;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;.                                                      
+                  ~;;;;;;;;;;;;;;;;;;;;;;;;;;;;;~                                                       
+                   :;;;;;;;;;;;;;;;;;;;;;;;;;;;;.                                                       
+                    ;;;;;;;;;;;;;;;;;;;;;;;;;;;-                                                        
+                    .;;;;;;;;;;;;;;;;;;;;;;;;;;                                                         
+                     .;;;;;;;;;;;;;;;;;;;;;;;;,                                                         
+                      -;;;;;;;;;;;;;;;;;;;;;;:                                                          
+                       -;;;;;;;;;;;;;;;;;;;;;,                                                          
+                        ~;;;;;;;;;;;;;;;;;;;:                                                           
+                         :;;;;;;;;;;;;;;;;;;.                                                           
+                          ;;;;;;;;;;;;;;;;;~                                                            
+                          .;;;;;;;;;;;;;;;;.                                                            
+                           ,;;;;;;;;;;;;;;:                                                             
+                            -;;;;;;;;;;;;;.                                                             
+                             -;;;;;;;;;;;:                                                              
+                              ~;;;;;;;;;;                                                               
+                               :;;;;;;;;~                                                               
+                                :;;;;;;;.                                                               
+                                .;;;;;;~                                                                
+                                 .;;;;;.                                                                
+                                  ,;;;~                                                                 
+                                   -~~.                                                                 
+    
+            `
+            let landNumber = Math.floor(Math.random() * 10) + 1;
+            while (true) {
+                let inputNum = prompt("업/다운 게임! 숫자 입력 (1~10): ");
+                if (landNumber > inputNum) {
+                    alert("😁😁😁😁😁입력한 숫자보다 커용😁😁😁😁😁");
+                } else if (landNumber < inputNum) {
+                    alert("🤣🤣🤣🤣🤣입력한 숫자보다 작아용🤣🤣🤣🤣🤣");
+                } else {
+                    alert("👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍정답!👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍👍");
+                    
+                    document.write('<image src="https://cdn.dealbada.com/data/editor/2205/7a5c044a3962ab8510f3eab96ac0e36b_1653389753_4337.gif">'+ "<br>");
+                    document.write('<image src="https://img2.quasarzone.co.kr/img/data/editor/1807/2034270307_mcZvNed8_2365023f21837c832e23f5580a75415ea6b51dab.gif">'+ "<br>");
+                    document.write('<image src="https://t1.daumcdn.net/news/202005/17/joongang/20200517171457038vwst.gif">'+ "<br>");
+                    document.write('<image src="https://thumbs.gfycat.com/BreakableEmotionalArmyant-size_restricted.gif">'+ "<br>");
+                    document.write('<image src="https://thumbs.gfycat.com/CandidBaggyAmazondolphin-size_restricted.gif">'+ "<br>");
+                    document.write('<image src="https://file3.instiz.net/data/file3/2019/09/28/f/2/b/f2b1a578e89417cf96bd22dc3baf8745.gif">'+ "<br>");
+                    document.write('<image src="https://file3.instiz.net/data/file3/2019/09/28/c/6/f/c6f268b978bc685dabedfe2fd92609b4.gif">'+ "<br>");
+                    document.write('<image src="https://blog.kakaocdn.net/dn/7JqRu/btqDA6ozk4w/WRddb2Lo4VcuVxHA5NwSp1/img.gif">'+ "<br>");
+                    document.write('<image src="https://blog.kakaocdn.net/dn/bHeZQi/btq4BwUt98W/idpieuMlT8G9wt0KTYujqk/img.gif">'+ "<br>");
+                    document.write('<image src="https://s3.orbi.kr/data/file/united/59ea7b81227d4c1e9e46a929fc206b8f.gif">'+ "<br>");
+                    document.write('<image src="https://t1.daumcdn.net/cfile/tistory/2364194D5870601926">'+ "<br>");
+                    document.write('<image src="https://mblogthumb-phinf.pstatic.net/MjAxNjEwMjdfMjAx/MDAxNDc3NTQzODI3ODg2.6DbLWffvjcr86TwQCZzRN8Hleq3kvWj0E57dZvzB0WMg.Rfg1Bs2Veo3wCNQkoEfOmXOPvQp7_3bplkbEpqyjtowg.GIF.rlfjrl24/5f391583c9b2f3a67ab18209ca67d644.gif?type=w800">'+ "<br>");
+                    document.write('<image src="https://blog.kakaocdn.net/dn/bsjxXN/btrp8r5ZhId/PoVD0AKoNSOKKk5bGa2Kqk/img.gif">' + "<br>");
+                    document.write('<image src="https://t1.daumcdn.net/cfile/tistory/2672304E55AB285816">'+ "<br>");
+                    document.write('<image src="https://mblogthumb-phinf.pstatic.net/MjAxNjEwMjdfMjk3/MDAxNDc3NTQzODMwMTky.6un9PXOgvr9PxCzHTspjlGZ6QSJTeIcpSYgZ_M7Qgekg.PXQUCvo9v0gUxFoHGy2Ycx5qwsU_3j95d23bNPiAjMkg.GIF.rlfjrl24/i1279649316.gif?type=w800">'+ "<br>");
+                    document.write('<image src="https://blog.kakaocdn.net/dn/cEO05G/btqyKaaMXVO/mpjI05OpZRrk9wD7Icx0yk/img.gif">' + "<br>");
+                    document.write('<image src="https://www.ddengle.com/files/attach/images/11334861/990/707/011/e1f91a1394516707d3706600cff71c79.gif">'+ "<br>");
+                    document.write('<image src="https://cdn.ppomppu.co.kr/zboard/data3/2018/0107/20180107223028_txtxhwub.gif">'+ "<br>");
+                    document.write('<image src="https://t1.daumcdn.net/news/202108/17/PPOMPPU/20210817140005089crel.gif">' + "<br>");
+                    document.write('<image src="https://s3.orbi.kr/data/file/united2/554da26036e04541bcf17b94ac72319a.gif">'+ "<br>");
+                    document.write('<image src="https://mblogthumb-phinf.pstatic.net/MjAxNjEwMjdfMTg4/MDAxNDc3NTQzODI3MDM2.-bhVWgVk17Sr8p2Gf6x06jrGjlJahJdFUkDtYKtDpN8g.QURfWeIf_ZXJb9axj1FqAb3IbDQhSt6Uv9DDfcjCdVgg.GIF.rlfjrl24/2639CD3852DDE3B5052C93.gif?type=w800">'+ "<br>");
+                    document.write('<image src="https://i.pinimg.com/originals/6a/97/88/6a9788aff76eed5ea30cf1d4a0737fa3.gif">'+ "<br>");
+                    
+                    document.write('<div id ="hehe"><div id = "hehe1"><strong>정<br>답<br>입<br>니<br>다<br>!!!</strong></div></div>');
+                    break;
+                }
+            }
+        </script>
+    </pre>
+    
+</body>
+</html>

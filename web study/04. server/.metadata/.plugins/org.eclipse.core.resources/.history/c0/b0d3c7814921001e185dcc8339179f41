@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="Ex07RadioCheckBox" method="post">
+		결혼 유무 :
+		기혼자 <input type="radio" name="marriage">
+		미혼자 <input type="raido" name="marriage">
+		
+		<br>
+		<input type="submit">
+	</form>
+</body>
+</html>

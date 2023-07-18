@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            document.write      : 웹페이지에 글쓰기
+            console.log         : 글쓰기
+            alert               : 알림 출력
+            
+            prompt              : 문자열로 반환하는 입력문
+            confirm             : 논리형 데이터로 반환 (확인/취소)
+            
+            1. var                   : 선언 ; 재선언 O 재할당 O (과거 코드)
+            2. let                   : 변수 ; 재선언 X 재할당 O
+            3. const                 : 상수 ; 재선언 X 재할당 X
+
+            number, string , boolean : 값을 넣을 때 자료형 결정, 기본 데이터 타입
+
+            undefined, null          : 자바스크립트에서만 존재하는 자료형
+                  undefined          : 데이터, 자료형 모두 정의되지 않은 상태 (선언만 했을 경우)
+                       null          : "데이터만" 정의되지 않은 상태 (값이 비어있는지 체크할때 사용)
+            
+            hoisting                 : var로 같은 변수 초기화해도 오류 안나는 이유
+        */
+        var data;
+        console.log(data);
+        var data = 10.5;
+        console.log(data, typeof(data));
+        var data = true;
+        console.log(data, typeof(data));
+
+        let msg = "hello";
+        // let msg = "hello"; // 오류발생 
+
+        let num1 = 10;
+        let num2 = 14.3;
+        let msg1 = "hello!";
+        let msg2 = 'hello!!';
+        let isLogin = true; //false
+        let empty = null; // null = object
+        let value; // undefined 
+
+        console.log(typeof(num1));
+        console.log(typeof(num2));
+        console.log(typeof(msg1));
+        console.log(typeof(msg2));
+        console.log(typeof(isLogin));
+        console.log(typeof(empty));
+        console.log(typeof(value));
+
+
+    </script>
+</body>
+</html>

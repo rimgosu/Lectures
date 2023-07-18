@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Jua:400" rel="stylesheet">
+    <style>
+
+        #container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 300px;
+            font-family: 'Jua';
+        }
+
+        h1{
+            margin: 0;
+            padding: 0;
+        }
+
+        #lotto-container{
+            display: flex;
+            align-items: center;
+            gap:20px;
+        }
+
+        .num{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            border-radius: 50px;
+            /* background-color: orange; */
+            text-align: center;
+            line-height: 100px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .bonus-connect{
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .bonus{
+            background-color: lightgray;
+        }
+        
+        .btn-lotto{
+            width: 150px;
+            height: 50px;
+            border: 0;
+            border-radius: 5px;
+            box-shadow: 3px 3px black;
+            font-family: 'Jua';
+            font-size: 1.5em;        
+            font-weight: bold;    
+        }
+        .btn-lotto:hover{
+            cursor: pointer;
+        }
+        .btn-lotto:active{
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container">
+        <h1>로또 추첨기</h1>
+        <div id="lotto-container">
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="num"></div>
+            <div class="bonus-connect">+</div>
+            <div id="bonus" class="num"></div>         
+            
+        </div>
+    
+        <button class="btn-lotto" onclick="lottoPlay()">로또번호생성</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        //로또 추첨기 만들기
+        //1. 버튼을 클릭시 lottoPlay()가 실행된다.
+        //2. 1~45 사이의 랜덤한 숫자 7개가 생성된다.(중복없이)
+        //3. 생성된 7개 숫자를 웹 페이지에 출력한다.
+        // - 7개 중 6개는 class가 "num"인 div태그에 출력한다.
+        // - 마지막 번호를 id가 'bonus'인 div태그에 출력한다.
+        // * 웹 페이지 출력은 innerText 활용
+
+        
+        let lottoPlay = () => {
+            const _set = new Set();
+            while (true) {
+                if (_set.size >=7) {
+                    break;
+                }
+                let landNum = Math.floor(Math.random()*45+1);
+                _set.add(landNum);
+            } 
+            let _list = [..._set];
+            console.log(_list);
+
+            let parent = document.getElementById("lotto-container");
+            parent.innerHTML = ""
+            for (let i=0; i<6; i++) {
+                parent.innerHTML +=`<div class='num'>${_list[i]}</div>`
+            }
+            parent.innerHTML += `<div class="bonus-connect">+</div>`
+            parent.innerHTML += `<div id="bonus" class="num">${_list[_list.length-1]}</div>`
+            
+        }
+
+       
+    </script>
+
+</body>
+</html>
