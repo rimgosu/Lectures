@@ -1,3 +1,0 @@
-INDEX VERSION 1.132
-C:\Users\aischool\Desktop\web study\04. server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1613286339.index
-\JSP\src\main\java
