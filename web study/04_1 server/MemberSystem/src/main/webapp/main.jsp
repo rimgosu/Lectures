@@ -32,10 +32,10 @@
 <body>
 	<div id="wrap">
 		<a href="join.jsp"><div class="menu">회원가입</div></a>
-		<div class="menu">로그인</div>
-		<div class="menu">회원정보수정</div>
+		<a href="login.jsp"><div class="menu">로그인</div></a>
+		<a href="update.jsp"><div class="menu">회원정보수정</div></a>
 		<div class="menu">회원목록보기</div>
-		<div class="menu">회원탈퇴</div>
+		<a href="delete.jsp"><div class="menu">회원탈퇴</div></a>
 		
 	</div>
 </body>
