@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="5">
-    <list key="modules" value0="Ajax::org.eclipse.jst.jee.server:Ajax::jst.web::4.0" value1="JSP::org.eclipse.jst.jee.server:JSP::jst.web::4.0" value2="Project::org.eclipse.jst.jee.server:Project::jst.web::4.0" value3="MemberSystem::org.eclipse.jst.jee.server:MemberSystem::jst.web::4.0"/>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="6">
+    <list key="modules" value0="Ajax::org.eclipse.jst.jee.server:Ajax::jst.web::4.0" value1="JSP::org.eclipse.jst.jee.server:JSP::jst.web::4.0" value2="Project::org.eclipse.jst.jee.server:Project::jst.web::4.0" value3="MemberSystem::org.eclipse.jst.jee.server:MemberSystem::jst.web::4.0" value4="MemberSystem_MVC2::org.eclipse.jst.jee.server:MemberSystem_MVC2::jst.web::4.0"/>
   </server>
 </servers>

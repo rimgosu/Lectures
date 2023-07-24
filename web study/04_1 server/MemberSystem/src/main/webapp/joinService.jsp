@@ -1,3 +1,5 @@
+<%@page import="com.model.memberDTO"%>
+<%@page import="java.lang.reflect.Member"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%@ page import="java.sql.Connection, java.sql.DriverManager, java.sql.PreparedStatement, java.sql.ResultSet, java.sql.SQLException" %>
@@ -61,6 +63,7 @@
 	psmt.setString(5, phone);
 	psmt.setString(6, gender);
 	psmt.setInt(7, iAge);
+	
 
 	cnt = psmt.executeUpdate();
 	
