@@ -1,12 +1,8 @@
 INDEX VERSION 1.4+C:\Users\aischool\Desktop\study\web study\04_1 server\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 661600371.index
-610126704.index
 2131822481.index
-2498547447.index
+610126704.index
 449384428.index
 3646470221.index
-2218378069.index
-2298108518.index
-3878998920.index
-1167706425.index
-885770616.index
+1750353121.index
+2259753476.index

@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Ajax" path="/Ajax" reloadable="true" source="org.eclipse.jst.jee.server:Ajax"/><Context docBase="JSP" path="/JSP" reloadable="true" source="org.eclipse.jst.jee.server:JSP"/><Context docBase="Project" path="/Project" reloadable="true" source="org.eclipse.jst.jee.server:Project"/><Context docBase="MemberSystem" path="/MemberSystem" reloadable="true" source="org.eclipse.jst.jee.server:MemberSystem"/><Context docBase="MemberSystem_MVC2" path="/MemberSystem_MVC2" reloadable="true" source="org.eclipse.jst.jee.server:MemberSystem_MVC2"/></Host>
+      <Context docBase="Ajax" path="/Ajax" reloadable="true" source="org.eclipse.jst.jee.server:Ajax"/><Context docBase="JSP" path="/JSP" reloadable="true" source="org.eclipse.jst.jee.server:JSP"/><Context docBase="Project" path="/Project" reloadable="true" source="org.eclipse.jst.jee.server:Project"/><Context docBase="MemberSystem" path="/MemberSystem" reloadable="true" source="org.eclipse.jst.jee.server:MemberSystem"/><Context docBase="MemberSystem_MVC2" path="/MemberSystem_MVC2" reloadable="true" source="org.eclipse.jst.jee.server:MemberSystem_MVC2"/><Context docBase="CookieSession" path="/CookieSession" reloadable="true" source="org.eclipse.jst.jee.server:CookieSession"/></Host>
     </Engine>
   </Service>
 </Server>
