@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.model.MessageDAO;
-import com.model.MessageDTO;
+import com.model.MemberDAO;
+import com.model.MemberDTO;
 
 /**
  * Servlet implementation class LoginService
@@ -27,10 +27,10 @@ public class LoginService extends HttpServlet {
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
 		
-		MessageDTO dto = new MessageDTO(email, pw);
-		MessageDAO dao = new MessageDAO();
+		MemberDTO dto = new MemberDTO(email, pw);
+		MemberDAO dao = new MemberDAO();
 		
-		MessageDTO info = dao.login(dto);
+		MemberDTO info = dao.login(dto);
 		
 		if (info != null) {
 			System.out.println("로그인 성공!");

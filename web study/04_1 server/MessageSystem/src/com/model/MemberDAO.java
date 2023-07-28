@@ -5,12 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
-public class MessageDAO {
-
-	
-	
+public class MemberDAO {
 
 	private Connection conn;
 	private PreparedStatement psmt;
@@ -64,17 +60,20 @@ public class MessageDAO {
 		}
 		
 	}
+	
 
-	public int send(MessageDTO dto) {
+	// 회원가입
+	public int join(MemberDTO member) {
 		
 		getConnection();
 		
 		try {
-			String sql = "insert into message values(MSG_NUM.NEXTVAL,?,?,?,SYSDATE)";
+			String sql = "insert into msgmember values(?,?,?,?)";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto.getSend_name());
-			psmt.setString(2, dto.getReceive_email());
-			psmt.setString(3, dto.getContent());
+			psmt.setString(1, member.getEmail());
+			psmt.setString(2, member.getPw());
+			psmt.setString(3, member.getPhone());
+			psmt.setString(4, member.getAddr());
 			
 			cnt = psmt.executeUpdate();
 			return cnt;
@@ -85,26 +84,29 @@ public class MessageDAO {
 			close();
 		}
 		
-		return 0;
+		return cnt;
 		
 	}
-	
-	public ArrayList<MessageDTO> select(String email) {
-		
-		ArrayList<MessageDTO> list = new ArrayList<>();
-		
+
+	public MemberDTO login(MemberDTO dto) {
+		// TODO Auto-generated method stub
+
 		getConnection();
+		MemberDTO info = null;
 		
 		
 		try {
-			String sql = "select * from message where receive_email=? order by send_date desc";
+			String sql = "select * from msgmember where email=? and pw=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, email);
+			psmt.setString(1, dto.getEmail());
+			psmt.setString(2, dto.getPw());
+			
 			rs = psmt.executeQuery();
-			while(rs.next()) {
-				MessageDTO dto = new MessageDTO(rs.getInt("num"), rs.getString("send_name"), rs.getString("receive_email"), rs.getString("content"), rs.getString("send_date"));
-				list.add(dto);
+			if(rs.next()) {
+				info = new MemberDTO(rs.getString("email"), rs.getString("pw"), rs.getString("phone"), rs.getString("addr"));
+				
 			}
+			return info;
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -113,21 +115,25 @@ public class MessageDAO {
 			close();
 		}
 		
-		
-		return list;
+		return null;
 	}
 
-	public void allDelete(String email) {
+	public int update(MemberDTO dto) {
 		// TODO Auto-generated method stub
-		
 		getConnection();
 		
-		
 		try {
-			String sql = "delete from message where receive_email = ?";
+			String sql = "update msgmember set pw=?, phone=?, addr=? where email=?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, email);
-			psmt.executeUpdate();
+			psmt.setString(1, dto.getPw());
+			psmt.setString(2, dto.getPhone());
+			psmt.setString(3, dto.getAddr());
+			psmt.setString(4, dto.getEmail());
+			
+			cnt = psmt.executeUpdate();
+			return cnt;
+			
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -135,27 +141,7 @@ public class MessageDAO {
 			close();
 		}
 		
-	}
-
-	public void delete(int ch_num) {
-		// TODO Auto-generated method stub
-		
-		getConnection();
-		
-		try {
-			String sql = "delete from message where num = ?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, ch_num);
-			psmt.executeUpdate();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		
-		
-		
+		return 0;
 	}
 	
 	

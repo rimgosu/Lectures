@@ -1,4 +1,6 @@
 <%@page import="com.model.MessageDTO"%>
+<%@page import="com.model.MessageDAO"%>
+<%@page import="com.model.MemberDTO"%>
 <%@page import="java.util.ArrayList"%>
 
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -17,9 +19,7 @@
 	<body>
 
 	<%
-		
-		MessageDTO info = (MessageDTO)session.getAttribute("info");
-	
+	MemberDTO info = (MemberDTO)session.getAttribute("info");
 	%>
 
 		<!-- Wrapper -->
@@ -29,7 +29,12 @@
 					<header id="header" class="alt">
 						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
 						<nav>
+							<% if (info != null) { %>
+								<a href="update.jsp">개인정보수정</a>
+								<a href="logoutService">로그아웃</a>
+							<% } else { %>
 								<a href="#menu">로그인</a>
+							<% } %>
 							<!-- 로그인 후 Logout.jsp로 이동할 수 있는'로그아웃'링크와 '개인정보수정'링크를 출력하시오. -->
 						</nav>
 					</header>
@@ -142,8 +147,31 @@
 									</header>
 									<p></p>
 									<ul class="actions">
-										<li>로그인을 하세요.</li>
-										<li><a href="#" class="button next scrolly">전체삭제하기</a></li>
+										<% 
+											String html = "";
+											if(info != null) {
+												MessageDAO dao = new MessageDAO();
+												ArrayList<MessageDTO> list = dao.select(info.getEmail());
+												html += "<table><tr><th>num</th><th>send_name</th><th>receive_email</th><th>content</th><th>send_date</th><th>삭제</th></tr>";
+												for (int i=0; i< list.size(); i++) {
+													html += "<tr>";
+													html += "<td>" + (i+1) + "</td>"; 
+													html += "<td>" + list.get(i).getSend_name() + "</td>"; 
+													html += "<td>" + list.get(i).getReceive_email() + "</td>"; 
+													html += "<td>" + list.get(i).getContent() + "</td>"; 
+													html += "<td>" + list.get(i).getSend_date() + "</td>"; 
+													html += "<td>" + "<a href=\"MsgDelete?num=" + list.get(i).getNum() + "\">삭제</a></td>";
+													html += "</tr>";
+												}
+												html+= "</table>";
+												out.print(html);
+											
+											} else {
+												out.print("<li>로그인을 하세요.</li>");
+											}
+										%>
+										
+										<li><a href="MsgAllDelete" class="button next scrolly">전체삭제하기</a></li>
 									</ul>
 								</div>
 							</section>
@@ -154,19 +182,19 @@
 					<section id="contact">
 						<div class="inner">
 							<section>
-								<form>
+								<form action="msgSendService">
 								<div class="field half first">
 										<label for="name">Name</label>
-										<input type="text"  id="name" placeholder="보내는 사람 이름" />
+										<input type="text"  id="name" placeholder="보내는 사람 이름" name="name"/>
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
-										<input type="text"  id="email" placeholder="보낼 사람 이메일"/>
+										<input type="text"  id="email" placeholder="보낼 사람 이메일" name="email"/>
 									</div>
 
 									<div class="field">
 										<label for="message">Message</label>
-										<textarea  id="message" rows="6"></textarea>
+										<textarea  id="message" rows="6" name="message"></textarea>
 									</div>
 									<ul class="actions">
 										<li><input type="submit" value="Send Message" class="special" /></li>
@@ -180,7 +208,15 @@
 									<div class="contact-method">
 										<span class="icon alt fa-envelope"></span>
 										<h3>Email</h3>
-										<a href="#">로그인 한 사람의 이메일을 출력</a>
+										
+										<% if(info != null) { %>
+											<a href="#"><%= info.getEmail() %></a> 
+								
+										<% }else { %>
+											<a href="#">로그인 한 사람의 이메일을 출력</a>
+										
+										<% } %>
+										
 										<!-- 로그인 한 사용자의 이메일을 출력하시오 -->
 									</div>
 								</section>
@@ -188,7 +224,14 @@
 									<div class="contact-method">
 										<span class="icon alt fa-phone"></span>
 										<h3>Phone</h3>
-										<span>로그인 한 사람의 전화번호를 출력</span>
+										
+										<% if(info != null) { %>
+											<a href="#"><%= info.getPhone() %></a> 
+								
+										<% }else { %>
+											<span>로그인 한 사람의 전화번호를 출력</span>
+										
+										<% } %>
 										<!-- 로그인 한 사용자의 전화번호를 출력하시오 -->
 									</div>
 								</section>
@@ -196,7 +239,14 @@
 									<div class="contact-method">
 										<span class="icon alt fa-home"></span>
 										<h3>Address</h3>
-										<span>로그인 한 사람의 집주소를 출력</span>
+										
+										<% if(info != null) { %>
+											<a href="#"><%= info.getAddr() %></a> 
+								
+										<% }else { %>
+											<span>로그인 한 사람의 집주소를 출력</span>
+										
+										<% } %>
 										<!-- 로그인 한 사용자의 집주소를 출력하시오 -->
 									</div>
 								</section>

@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.model.MessageDAO;
-import com.model.MessageDTO;
+import com.model.MemberDAO;
+import com.model.MemberDTO;
 
 @WebServlet("/JoinService")
 public class JoinService extends HttpServlet {
@@ -31,10 +31,10 @@ public class JoinService extends HttpServlet {
 
       // System.out.println(email + "/" + pw + "/" + phone + "/" + addr);
       
-      MessageDTO dto = new MessageDTO(email, pw, phone, addr);
+      MemberDTO dto = new MemberDTO(email, pw, phone, addr);
       System.out.println(dto.toString());
       
-      MessageDAO dao = new MessageDAO();
+      MemberDAO dao = new MemberDAO();
       int cnt = dao.join(dto);
       
       if (cnt >0) {
