@@ -1,0 +1,3 @@
+git log		로그보기
+git checkout id	커밋된 상태로 이동
+git checkout -	가장 최근 상태로 이동

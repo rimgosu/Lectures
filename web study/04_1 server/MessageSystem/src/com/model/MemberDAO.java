@@ -19,9 +19,9 @@ public class MemberDAO {
 	public void getConnection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String db_id = "shopping";
-			String db_pw = "12345";
+			String db_url = "jdbc:oracle:thin:@project-db-stu3.smhrd.com:1524:xe";
+			String db_id = "Insa4_Spring_hacksim_5";
+			String db_pw = "aishcool5";
 			
 			conn = DriverManager.getConnection(db_url, db_id, db_pw);
 			
