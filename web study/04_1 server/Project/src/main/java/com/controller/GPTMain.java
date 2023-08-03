@@ -5,7 +5,7 @@ import java.io.IOException;
 import com.model.Gpt3DAO;
 
 public class GPTMain {
-    private static final String API_KEY = "input secret key";
+    private static final String API_KEY = "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";
 
     public static void main(String[] args) throws IOException {
     	String prompt = "HTTP/1.1 200 OK\r\n"
